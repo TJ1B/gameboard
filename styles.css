@@ -1,0 +1,229 @@
+body{
+    background-image: linear-gradient(rgb(185, 218, 192), rgb(238, 208, 190),rgb(185, 218, 192));
+margin-left: 30px;
+margin-right: 30px;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex; /* This line makes it a flex container */
+    justify-content: center; /* This centers the children horizontally */
+    align-items: start; /* This aligns children to the start of the container vertically */
+    gap: 20px; /* Optional: adds space between the children */
+}
+
+.diceBox{
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px; 
+    color:  rgba(105, 105, 105, 0.719);
+    
+}
+
+.dice-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    margin-inline-end: 20px;
+    
+}
+
+.dice {
+    width: 100%;
+    height: 100%;
+    background-size:contain;
+    cursor: pointer;
+    transition: transform 0.6s ease-in-out;
+}
+
+#numberDice {
+    background-image: url('6die.png');
+    user-select: none;
+}
+
+#directionDice {
+    background-image: url('4die.png');
+    user-select: none;
+}
+
+.rolling {
+    animation: rollDice 0.6s ease-in-out;
+}
+@keyframes rollDice {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px; 
+    color: #2c2c2cc5;
+    pointer-events: none;
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.show-result {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: scaleUpAndDown 0.6s ease-in-out forwards;
+}
+
+@keyframes scaleUpAndDown {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    50% { transform: translate(-50%, -50%) scale(1.5); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+#gridBoard {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 columns */
+    grid-template-rows: repeat(12, 1fr); /* 12 rows */
+    gap: 5px; /* Space between grid cells */
+    width: 900px;
+    height: 900px; 
+    margin: auto;
+}
+
+.grid-cell {
+    border: 2px solid #dfdfdf; /* Style for the grid cells */
+    background-color: #f9f9f9e8; /* Background color for the grid cells */
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+}
+
+
+
+
+.card-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin: 5px;
+    border: 5px solid rgb(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer; 
+  }
+
+
+
+.colorCard {
+width: 60px;
+height: 60px;
+display: block;
+margin: 5px;
+border: 5px solid rgb(255, 255, 255, 0.85);
+border-radius: 10px;
+}
+
+.cardBox{
+display:inline-flex;
+align-items: center;
+}
+
+.cardText{
+    margin-left: 7px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:  rgba(105, 105, 105, 0.719);
+}
+
+
+.titleText{
+    margin-left: 7px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+    color:  rgba(105, 105, 105, 0.719);
+}
+.card-example {
+   display: flex;
+   flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+    clear: both;
+    padding: 10px;
+    width: fit-content;
+    background-color: rgba(173, 173, 173, 0.616);
+    border-radius: 10px;
+}
+
+
+.rightContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content:right;
+    align-items: right;
+}
+
+.figure-countainer{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+    justify-content: left;
+    gap: 10px; 
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px; 
+    color:  rgba(105, 105, 105, 0.719);
+}
+
+.figures {
+    width: 100px; 
+    height: auto; 
+    cursor: pointer; 
+}
+
+
+.ruleText{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: left;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:  rgba(105, 105, 105, 0.719);
+}
+
+/* Status */
+#stats div {
+    margin-bottom: 10px;
+}
+
+
+#stats span {
+    margin: 0 10px;
+    min-width: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}

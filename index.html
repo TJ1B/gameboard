@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gameboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+<!-- Game Cards -->
+        <div>
+            <div class="cardBox">
+            <div class="card-container"> </div>
+            <div class="titleText">
+                <div>步步高升</div>
+                <div>抽抽出金</div>
+               </div>
+            </div>
+
+            <div id="colorCards" class="card-example">
+            <div class="cardBox">
+                <div class="colorCard" style="background-color: rgb(196, 85, 57);"></div>
+                <div class="cardText">
+                 <div>真心</div>
+                 <div>收集3个</div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="colorCard" style="background-color: rgba(60,178,175);"></div>
+                <div class="cardText">
+                 <div>泉水</div>
+                 <div>HP+1</div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="colorCard" style="background-color:  rgb(12, 189, 106);"></div>
+                <div class="cardText">
+                 <div>野怪</div>
+                 <div>HP-1或</div>
+                 <div>Gold+1</div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="colorCard" style="background-color:  rgb(181,235,71);"></div>
+                <div class="cardText">
+                 <div>再来</div>
+                 <div>回合+1</div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="colorCard" style="background-color:  rgb(165,101,137);"></div>
+                <div class="cardText">
+                 <div>商店</div>
+                 <div>3Gold</div>
+                 <div>=1HP</div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="colorCard" style="background-color:  rgb(255,193,48);"></div>
+                <div class="cardText">
+                 <div>金矿</div>
+                 <div>Gold+1</div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="colorCard" style="background-color:  rgb(73, 73, 73);"></div>
+                <div class="cardText">
+                 <div>终点</div>
+                 <div>美梦成真</div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="colorCard" style="background-color:  rgb(207,174,161);"></div>
+                <div class="cardText">
+                 <div>道路</div>
+                 <div>无事发生</div>
+                </div>
+            </div>
+            </div>
+            <div class="ruleText">
+                <div>胜利条件</div>
+                <div>收集3个真心到达终点且HP至少3点</div>
+            </div>
+            </div>
+<!-- 144 divs for the grid -->
+    <div id="gridBoard">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <!-- Repeat the above line 143 more times -->
+    </div>
+
+<!-- Dice and Figure -->
+    <div>
+  <!-- Dice -->
+    <div class="diceBox"> 
+        <div>数字</div>
+    <div id="numberDiceContainer" class="dice-container" onclick="rollNumberDice()">
+        <div id="numberDice" class="dice"></div>
+        <div class="result" id="numberResult"></div>
+        </div>
+    </div>
+
+    <div  class="diceBox">
+         <div>方向</div>
+        <div id="directionDiceContainer" class="dice-container" onclick="rollDirectionDice()">
+        <div id="directionDice" class="dice"></div>
+        <div class="result" id="directionResult"></div>
+        </div>
+    </div>
+
+     <!-- figure 
+    <div class="figure-countainer">
+        <div>战士</div>
+        <img class="figures" src="Warrior.png" alt="Warrior" draggable="true" />
+        <div>魔术师</div>
+        <img class="figures" src="Wizard.png" alt="Wizard" draggable="true"/>
+        <div>游侠</div>
+        <img class="figures" src="Ranger.png" alt="Ranger" draggable="true"/>
+        <div>神偷</div>
+        <img class="figures" src="Rogue.png" alt="Rogue" draggable="true"/>
+
+    </div>
+  -->
+
+  <div class="figure-countainer">
+
+    <div  id="stats">
+        <div>
+            <p>HP 生命值</p>
+            <button onclick="decrementValue('hp')">-</button>
+            <span id="hp-value">6</span>
+            <button onclick="incrementValue('hp')">+</button>
+        </div>
+        <div>
+            <p>Gold 金钱</p>
+            <button onclick="decrementValue('gold')">-</button>
+            <span id="gold-value">6</span>
+            <button onclick="incrementValue('gold')">+</button>
+        </div>
+        <div>
+            <p>Heart 真心</p>
+            <button onclick="decrementValue('wish')">-</button>
+            <span id="wish-value">0</span>
+            <button onclick="incrementValue('wish')">+</button>
+        </div>
+    </div>
+
+    <img class="figures" id="draggableImage" src="pb.png" alt="qb">
+    <div class="ruleText">
+        <div>拖动贝塔头像</div>
+        <div>至任一格开始游戏</div>
+    </div>
+
+</div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
