@@ -30,14 +30,14 @@ function rollDirectionDice() {
 $(function() {
     // Define color configuration
     const colorConfig = [
-      { color: 'rgb(196, 85, 57)', count: 18 },
-      { color: 'rgba(60,178,175)', count: 18 },
-      { color: 'rgb(12, 189, 106)', count: 18 },
-      { color: 'rgb(181,235,71)', count: 18 },
-      { color: 'rgb(165,101,137)', count: 18 },
-      { color: 'rgb(255,193,48)', count: 18 },
-      { color: 'rgb(73, 73, 73)', count: 18 },
-      { color: 'rgb(207,174,161)', count: 18 }
+      { color: 'rgb(196, 85, 57)', count: 6 },
+      { color: 'rgba(60,178,175)', count: 6 },
+      { color: 'rgb(12, 189, 106)', count: 12 },
+      { color: 'rgb(181,235,71)', count: 12 },
+      { color: 'rgb(165,101,137)', count: 6 },
+      { color: 'rgb(255,193,48)', count: 6 },
+      { color: 'rgb(73, 73, 73)', count: 1 },
+      { color: 'rgb(207,174,161)', count: 95 }
     ];
   
     // Prepare the cards array with specified counts
