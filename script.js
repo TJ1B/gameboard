@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'rgb(181,235,71)': 12, 
     'rgb(165,101,137)': 6, 
     'rgb(255,193,48)': 6, 
-    'rgb(73, 73, 73)': 1, 
+    'rgb(224, 88, 99)': 1, 
     'rgb(207,174,161)': 95  
   };
   const cards = [];
