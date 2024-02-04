@@ -1,10 +1,21 @@
 body{
-    background-image: linear-gradient(rgb(185, 218, 192), rgb(238, 208, 190),rgb(185, 218, 192));
-margin-left: 30px;
-margin-right: 30px;
+     background-image: linear-gradient(rgb(185, 218, 192), rgb(238, 208, 190),rgb(185, 218, 192));
+
+}
+
+
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
 }
 
 .container {
+    margin-left: 30px;
+    margin-right: 30px;
     margin-top: 20px;
     display: flex; /* This line makes it a flex container */
     justify-content: center; /* This centers the children horizontally */
@@ -83,25 +94,79 @@ margin-right: 30px;
     100% { transform: translate(-50%, -50%) scale(1); }
 }
 
+
+
+
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    grid-template-rows: repeat(12, 1fr);
+    gap: 5px; 
+    width: 900px;
+    height: 900px; 
+    margin: auto;
+    
+  }
+  
+  .card {
+    background: rgba(185, 185, 185, 0.432);/* 默认图案的路径:url('path/to/default-image.jpg');  */
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgb(185, 185, 185);
+    border-radius: 8px;
+    cursor: pointer; 
+    position: relative; 
+  }
+  
+  .card.flip {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+  
+  /* 卡片背面的样式 */
+  .card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotate3d(0, 1, 0, 180deg);
+    border: 5px solid rgba(240, 240, 240, 0.925);
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+
+
+
+
+
+
+
+
+/*
 #gridBoard {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12 columns */
-    grid-template-rows: repeat(12, 1fr); /* 12 rows */
-    gap: 5px; /* Space between grid cells */
+    grid-template-columns: repeat(12, 1fr); 
+    grid-template-rows: repeat(12, 1fr);
+    gap: 5px; 
     width: 900px;
     height: 900px; 
     margin: auto;
 }
 
 .grid-cell {
-    border: 2px solid #dfdfdf; /* Style for the grid cells */
-    background-color: #f9f9f9e8; /* Background color for the grid cells */
+    border: 2px solid #dfdfdf; 
+    background-color: #f9f9f9e8; 
     width: 60px;
     height: 60px;
     border-radius: 6px;
 }
 
-
+*/
 
 
 .card-container {
@@ -112,6 +177,8 @@ margin-right: 30px;
     align-items: center;
     justify-content: center;
   }
+
+  /*
   .card {
     width: 60px;
     height: 60px;
@@ -122,7 +189,7 @@ margin-right: 30px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
     cursor: pointer; 
   }
-
+*/
 
 
 .colorCard {

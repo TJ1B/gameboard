@@ -26,7 +26,29 @@ function rollDirectionDice() {
     }, 600);
 }
 
-// Card
+
+ // Draggable Image
+ $( function() {
+  $( "#draggableImage" ).draggable();
+});
+
+// Status
+function incrementValue(type) {
+const valueElement = document.getElementById(`${type}-value`);
+let currentValue = parseInt(valueElement.innerText, 10);
+valueElement.innerText = currentValue + 1;
+}
+
+function decrementValue(type) {
+const valueElement = document.getElementById(`${type}-value`);
+let currentValue = parseInt(valueElement.innerText, 10);
+valueElement.innerText = Math.max(0, currentValue - 1); // Prevent negative values
+}
+
+
+/*
+
+// Random Card Draw
 $(function() {
     // Define color configuration
     const colorConfig = [
@@ -75,20 +97,46 @@ $(function() {
     });
   });
 
- // Draggable Image
-  $( function() {
-    $( "#draggableImage" ).draggable();
+*/
+document.addEventListener('DOMContentLoaded', () => {
+  const colorDistribution = {
+    'rgb(196, 85, 57)': 6, 
+    'rgba(60,178,175)': 6, 
+    'rgb(12, 189, 106)': 12, 
+    'rgb(181,235,71)': 12, 
+    'rgb(165,101,137)': 6, 
+    'rgb(255,193,48)': 6, 
+    'rgb(73, 73, 73)': 1, 
+    'rgb(207,174,161)': 95  
+  };
+  const cards = [];
+  
+  Object.keys(colorDistribution).forEach(color => {
+    for (let i = 0; i < colorDistribution[color]; i++) {
+      cards.push({ color });
+    }
+  });
+
+  shuffle(cards); // 打乱卡片顺序
+
+  const gridContainer = document.getElementById('grid-container');
+  cards.forEach(card => {
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('card');
+    cardElement.innerHTML = `<div class="back" style="background-color: ${card.color};"></div>`;
+
+    cardElement.addEventListener('click', () => {
+      cardElement.classList.toggle('flip'); // 添加toggle而不是add，允许卡片再次点击时翻回去
+    });
+
+    gridContainer.appendChild(cardElement);
+  });
 });
 
-// Status
-function incrementValue(type) {
-  const valueElement = document.getElementById(`${type}-value`);
-  let currentValue = parseInt(valueElement.innerText, 10);
-  valueElement.innerText = currentValue + 1;
-}
-
-function decrementValue(type) {
-  const valueElement = document.getElementById(`${type}-value`);
-  let currentValue = parseInt(valueElement.innerText, 10);
-  valueElement.innerText = Math.max(0, currentValue - 1); // Prevent negative values
+// Fisher-Yates Shuffle Algorithm
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
