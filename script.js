@@ -100,14 +100,14 @@ $(function() {
 */
 document.addEventListener('DOMContentLoaded', () => {
   const colorDistribution = {
-    'rgb(196, 85, 57)': 6, 
+    'rgb(196, 85, 57)': 3, 
     'rgba(60,178,175)': 6, 
     'rgb(12, 189, 106)': 12, 
     'rgb(181,235,71)': 12, 
     'rgb(165,101,137)': 6, 
     'rgb(255,193,48)': 6, 
     'rgb(224, 88, 99)': 1, 
-    'rgb(207,174,161)': 95  
+    'rgb(207,174,161)': 98 
   };
   const cards = [];
   
